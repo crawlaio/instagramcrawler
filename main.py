@@ -88,8 +88,8 @@ class InstagramCrawler:
 
     def main(self):
         if not self.user_id and self.username:
-            user_id = self.get_user_id()
-        if user_id:
+            self.user_id = self.get_user_id()
+        if self.user_id:
             self.video_dir = os.path.join(os.path.dirname(__file__), "videos", str(self.user_id))
             if not os.path.exists(self.video_dir):
                 os.makedirs(self.video_dir)
